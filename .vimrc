@@ -1,10 +1,11 @@
 " Basic {
 	set encoding=utf8
 	if !has("gui_running")
-		set t_Co=256
+	set t_Co=256
 	endif
 	let mapleader=","
 " }
+
 
 
 " Productivity {
@@ -56,55 +57,56 @@
 " Interface, colors, text {
 	syntax enable
 	" Text {
-		set wrap
+	set wrap
 	" }
 	" Colors {
-		set background=dark
-		colorscheme xoria256
-		"colorscheme elflord
-		"hi Visual term=reverse cterm=reverse guibg=Grey
-		" }
+	set background=dark
+	colorscheme xoria256
+	"colorscheme elflord
+	"hi Visual term=reverse cterm=reverse guibg=Grey
+	" }
 	" Interface {
-		set cursorline
-		"set number
-		set mousehide
-		set wildmenu
-		set title
-		set showmode
-		set showcmd
-		set laststatus=2
-		set ruler
+	set cursorline
+	"set number
+	set mousehide
+	set wildmenu
+	set title
+	set showmode
+	set showcmd
+	set laststatus=2
+	set ruler
 	" }
 " }
 
 
 " Plugins {
 	" NERDTree {
-		let NERDTreeShowHidden=1
-		let NERDTreeHighlightCursorline=0
+	let NERDTreeShowHidden=1
+	let NERDTreeHighlightCursorline=0
 	" }
 	" Startify {
-		let g:startify_bookmarks = ['~/.vimrc',]
+	let g:startify_bookmarks = ['~/.vimrc',]
 	" }
 	" Airline {
-		let g:airline_theme='dark'
-		let g:airline#extensions#tabline#enabled = 1
-		let g:airline_left_sep = ''
-		let g:airline_right_sep = ''
-		let g:airline_section_y = 'BUF: %n'
+	let g:airline_theme='dark'
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline_left_sep = ''
+	let g:airline_right_sep = ''
+	let g:airline_section_y = 'BUF: %n'
 	" }
 	" Commantry {
-		":help commentary
-		"gc {motion} comment or uncomment
-		"10 gcc comment or uncomment 10 rows
-		":setlocal commentstring=//%s	 setcomment // 
-		" reload .vimrc :so %
+	":help commentary
+	"gc {motion} comment or uncomment
+	"10 gcc comment or uncomment 10 rows
+	":setlocal commentstring=//%s	setcomment // 
+	" reload .vimrc :so %
 " }
 let g:indentLine_enabled = 0
 
 " Custom {
-	
+	set hidden  " if on buffers shos in NERDTree in new window, no split if modiffied
 	map <C-X> :bd<CR>
+	map <S-z><S-S> :w<CR>
 	
 	map <S-Z><S-X> :qa<CR>
 
@@ -122,7 +124,7 @@ let g:indentLine_enabled = 0
 	map <C-L> :NERDTreeToggle<CR>
 	map <F9> :NERDTreeToggle<CR>
 	
-	set pastetoggle=<F10>
+	set pastetoggle=<F10> " to paste from OS buffer
 	nnoremap <F11> :set invnumber<CR>
 	nnoremap gd :setlocal commentstring=//%s
 	nnoremap <F12> :NERDTreeFind<CR>
@@ -131,5 +133,15 @@ let g:indentLine_enabled = 0
 	":vs --new buffer; ctrl-w --move ; ctrl-c close; 10 ctrl-w --bigger
 	"":e .
 	"/\c ---search ignoring case
-	"" Shift v block ; = make code better
+	"" Shift v block ; = make code betteri formated
+	"C-v block S-i # Esc Esc
+	"gv x ---take it off (gv last selection)
+	". repeat last command
+	"@: --repeat last command in cmd 
+	"q: --search in vim commands in history (in normal mode) ; big list ":his" --show 
+	"S -v block move to right >; left < ;; line S->>
+	"yw in insert mode C-o p --paste text
+	":so %  reload  .vimrc
+	"u --undo C-r --redo; A --insert at the end of line
+    "<S-Z><S-Z> --save and quit; <S-Z><S-Q>--no save and quit
 " }
