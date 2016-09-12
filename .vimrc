@@ -44,6 +44,7 @@
 	set expandtab
 	set autoindent
 	set smartindent
+    set noet ci pi sts=0
 " }
 
 
@@ -143,5 +144,5 @@ let g:indentLine_enabled = 0
 	"yw in insert mode C-o p --paste text
 	":so %  reload  .vimrc
 	"u --undo C-r --redo; A --insert at the end of line
-    "<S-Z><S-Z> --save and quit; <S-Z><S-Q>--no save and quit
+	"dddd
 " }
