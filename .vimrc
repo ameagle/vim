@@ -61,9 +61,9 @@
 	set wrap
 	" }
 	" Colors {
-	set background=dark
-	colorscheme xoria256
-	"colorscheme elflord
+	"set background=dark
+	"colorscheme xoria256
+	colorscheme elflord
 	"hi Visual term=reverse cterm=reverse guibg=Grey
 	" }
 	" Interface {
