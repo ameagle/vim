@@ -120,6 +120,14 @@ let g:indentLine_enabled = 0
 	nnoremap <F5> :buffers<CR>:buffer<Space>
 	"map <F6> :Te<CR>
 
+	"Move Line or Selection up and down
+	nnoremap <F6> :m .+1<CR>==
+	nnoremap <F7> :m .-2<CR>==
+	inoremap <F6> <Esc>:m .+1<CR>==gi
+	inoremap <F7> <Esc>:m .-2<CR>==gi
+	vnoremap <F6> :m '>+1<CR>gv=gv
+	vnoremap <F7> :m '<-2<CR>gv=gv
+	"
 	nnoremap <F8> :!%:p<CR>
 	
 	map <C-L> :NERDTreeToggle<CR>
@@ -130,6 +138,8 @@ let g:indentLine_enabled = 0
 	nnoremap gd :setlocal commentstring=//%s
 	nnoremap <F12> :NERDTreeFind<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
 	"":Te -- open explorer in new window
 	":vs --new buffer; ctrl-w --move ; ctrl-c close; 10 ctrl-w --bigger
 	"":e .
@@ -145,4 +155,5 @@ let g:indentLine_enabled = 0
 	":so %  reload  .vimrc
 	"u --undo C-r --redo; A --insert at the end of line
 	"dddd
+	"S-@ : ---last command in Command Line
 " }
