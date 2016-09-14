@@ -25,12 +25,13 @@
 	call vundle#begin()
 	"git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	":PluginInstall
+	Plugin 'vim-airline/vim-airline'
 	Plugin 'VundleVim/Vundle.vim'
 	Plugin 'scrooloose/nerdtree'
-	Plugin 'vim-airline/vim-airline'
 	Plugin 'vim-airline/vim-airline-themes'
 	Plugin 'flazz/vim-colorschemes'
 	Plugin 'tpope/vim-commentary'
+	Plugin 'tpope/vim-fugitive'
 	call vundle#end()
 	filetype plugin indent on
 " }
@@ -94,6 +95,10 @@
 	let g:airline_left_sep = ''
 	let g:airline_right_sep = ''
 	let g:airline_section_y = 'BUF: %n'
+	function! CustomBranchFormat(name)
+		return 'Git: '.a:name
+	endfunction
+	let g:airline#extensions#branch#format='CustomBranchFormat'
 	" }
 	" Commantry {
 	":help commentary
@@ -103,6 +108,7 @@
 	" reload .vimrc :so %
 " }
 let g:indentLine_enabled = 0
+
 
 " Custom {
 	set hidden  " if on buffers shos in NERDTree in new window, no split if modiffied
