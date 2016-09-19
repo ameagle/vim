@@ -146,13 +146,15 @@ let g:indentLine_enabled = 0
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
-	"":Te -- open explorer in new window
-	":vs --new buffer; ctrl-w --move ; ctrl-c close; 10 ctrl-w --bigger
+	"":Te -- open explorer in new windo>w
+	":vs --new buffer; ctrl-w --move ; ctrl-c close; 10 ctrl-w >--bigger
+	"new --new buff
+	"S-R update current tree node
 	"":e .
 	"/\c ---search ignoring case
 	"" Shift v block ; = make code betteri formated
 	"C-v block S-i # Esc Esc
-	"gv x ---take it off (gv last selection)
+	"gv x ---take sign off (gv last selection)
 	". repeat last command
 	"@: --repeat last command in cmd 
 	"q: --search in vim commands in history (in normal mode) ; big list ":his" --show 
@@ -162,4 +164,6 @@ let g:indentLine_enabled = 0
 	"u --undo C-r --redo; A --insert at the end of line
 	"dddd
 	"S-@ : ---last command in Command Line
+	"S-m -goto Middle; S-h -goto up; S-l -goto end of screen
+	"
 " }
