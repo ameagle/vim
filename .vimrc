@@ -32,6 +32,7 @@
 	Plugin 'flazz/vim-colorschemes'
 	Plugin 'tpope/vim-commentary'
 	Plugin 'tpope/vim-fugitive'
+	Plugin 'majutsushi/tagbar'
 	call vundle#end()
 	filetype plugin indent on
 " }
@@ -134,8 +135,11 @@ let g:indentLine_enabled = 0
 	vnoremap <F6> :m '>+1<CR>gv=gv
 	vnoremap <F7> :m '<-2<CR>gv=gv
 	"
-	nnoremap <F8> :!%:p<CR>
-	
+	"nnoremap <F8> :!%:p<CR>
+	nmap <F8> :TagbarToggle<CR>
+	" ctags -R .
+	" ctrl ] ---goto to definition
+	" ctrl t ---goto to back 
 	map <C-L> :NERDTreeToggle<CR>
 	map <F9> :NERDTreeToggle<CR>
 	
