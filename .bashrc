@@ -13,22 +13,18 @@ alias nstl='netstat -na |grep LISTEN'
 alias em='emacs'
 #alias tmux='TERM=screen-256color tmux'
 alias tmux="tmux -2 "
-#PS1='\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\$\[\e[0m\]'
-#PS1='\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\$\[\e[0m\] \\w\$(__git_ps1 '(%s)') \$'
-#export PS1="\\w\$(__git_ps1 '(%s)') \$ "
-#PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\] \[\033[33;1m\]\w\[\033[m\] (\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)) "
 
-#PS1="\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\$\[\e[0m\](\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))#"
+PS1='\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\[\e[0;33m\][$(git branch 2>/dev/null | grep "^*" | colrm 1 2)]\[\e[1;32m\]\$\[\e[0m\] '
 
-#PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\]@\w\[\033[0;32m\][$(git branch 2>/dev/null | grep "^*" | colrm 1 2)\[\033[0;32m\]]\[\033[0m\033[0;32m\]\$\[\033[0m\033[0;32m\]\[\033[0m\] '
-
-#PS1='\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\$\[\e[0m\][$(git branch 2>/dev/null | grep "^*" | colrm 1 2)\[\033[0;32m\]]\[\033[0m\033[0;32m\]\$\[\033[0m\033[0;32m\]\[\033[0m\] '
-PS1='\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\$\[\e[0m\][$(git branch 2>/dev/null | grep "^*" | colrm 1 2)] '
 
 killgrep ()
 {
       kill -9 `ps ax | grep $1 | grep -v grep | awk '{print $1}'`
 }
+
+[[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] && \
+        source /usr/local/share/bash-completion/bash_completion.sh
+
 
 EDITOR=vim; export EDITOR
 CLICOLOR="YES";    export CLICOLOR
