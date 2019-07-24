@@ -22,8 +22,12 @@ killgrep ()
       kill -9 `ps ax | grep $1 | grep -v grep | awk '{print $1}'`
 }
 
-[[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] && \
-        source /usr/local/share/bash-completion/bash_completion.sh
+#[[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] && \
+#        source /usr/local/share/bash-completion/bash_completion.sh
+
+#if [ -f /usr/local/share/bash-completion/bash_completion.sh ]; then
+#        source /usr/local/share/bash-completion/bash_completion.sh
+#fi
 
 
 EDITOR=vim; export EDITOR
