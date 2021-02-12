@@ -40,7 +40,7 @@ killgrep ()
 #. ~/.docker-compose-completion.sh
 
 PAGER='less -X'; export PAGER
-
+export PATH=$PATH:/usr/local/bin
 EDITOR=vim; export EDITOR
 CLICOLOR="YES";    export CLICOLOR
 LSCOLORS="ExGxFxdxCxDxDxhbadExEx";    export LSCOLORS
