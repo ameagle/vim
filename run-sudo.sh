@@ -4,7 +4,7 @@ work_dir=/home/ameagle/sudoers_src
 sys_dir=/etc
 #for Freebsd
 #sys_dir=/usr/local/etc
-
+yum -y install gcc
 #rm -rf $work_dir
 mkdir -p $work_dir
 cd $work_dir
