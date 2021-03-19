@@ -22,6 +22,9 @@ alias dockfs='docker exec -it fs10-prod /bin/bash'
 alias sudo-s='sudo HOME=/home/ameagle -s'
 alias stelnet='openssl s_client -connect $1'
 
+alias lsblkfs='lsblk --output NAME,FSTYPE,LABEL,UUID,MODE'
+
+
 PS1='\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\[\e[0;33m\][$(git branch 2>/dev/null | grep "^*" | colrm 1 2)]\[\e[1;32m\]\$\[\e[0m\] '
 
 
