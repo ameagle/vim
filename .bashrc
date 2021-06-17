@@ -18,7 +18,7 @@ alias less='less -X'
 alias tmux="tmux -2 "
 alias fs_cli='docker exec -it fs10-prod /bin/fs_cli'
 alias dockfs='docker exec -it fs10-prod /bin/bash'
-
+alias dockng='docker exec  phonelab20_webserver_1 nginx -s $1' #dockng reload
 alias sudo-s='sudo HOME=/home/ameagle -s'
 alias stelnet='openssl s_client -connect $1'
 
