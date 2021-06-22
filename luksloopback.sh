@@ -1,10 +1,10 @@
 #!/bin/bash
 #https://gist.github.com/dbehnke/ad19ca8f1ccf80aebca5
-loopdevice=/dev/loop1
+loopdevice=/dev/loop2
 loopfile=crypt.loop
 
 #megabytes
-loopsize=512
+loopsize=100
 
 #/dev/mapper/xxxxx when open
 cryptmapper=myCrypt
@@ -26,6 +26,7 @@ create() {
   cryptsetup close $cryptmapper
   losetup -d $loopdevice
   losetup -a
+  mkdir -p $mountpoint
 }
 
 #mounts crypted loopback file
