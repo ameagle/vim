@@ -18,12 +18,24 @@ alias less='less -X'
 alias tmux="tmux -2 "
 alias fs_cli='docker exec -it fs10-prod /bin/fs_cli'
 alias dockfs='docker exec -it fs10-prod /bin/bash'
-
+alias dockng='docker exec  phonelab20_webserver_1 nginx -s $1' #dockng reload
 alias sudo-s='sudo HOME=/home/ameagle -s'
 alias stelnet='openssl s_client -connect $1'
 
 alias lsblkfs='lsblk --output NAME,FSTYPE,LABEL,UUID,MODE'
+
 alias mysql='docker exec -it  phonelab20_mariadb_1 mysql -uroot -p'
+
+#analog logstat in linux
+alias sockstat='lsof -Pi'
+
+#journalctl -f
+#https://ddanilov.me/how-to-configure-core-dump-in-docker-container
+#core, mount /tmp 
+#echo '/tmp/core.%e.%p.%s' | sudo tee /proc/sys/kernel/core_pattern
+
+#alias dnfnpchk="dnf -y --nogpgcheck install sngrep"
+alias dnfnpchk="dnf -y --nogpgcheck"
 
 PS1='\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\[\e[0;33m\][$(git branch 2>/dev/null | grep "^*" | colrm 1 2)]\[\e[1;32m\]\$\[\e[0m\] '
 
