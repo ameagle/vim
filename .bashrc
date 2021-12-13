@@ -25,6 +25,16 @@ alias stelnet='openssl s_client -connect $1'
 alias lsblkfs='lsblk --output NAME,FSTYPE,LABEL,UUID,MODE'
 
 alias mysql='docker exec -it  phonelab20_mariadb_1 mysql -uroot -p'
+alias click='docker exec -it clickhouse-shard_1 clickhouse-client'
+alias djangolog='docker logs -f mw-apistack-django_ameagle'
+
+alias psql='docker exec -it mw-apistack-postgis_ameagle psql -U user -d moonwalker'
+#\d+ table_name -- show create table
+alias sourceclick='source /home/ameagle/python39/venv/bin/activate && cd /home/ameagle/Projects/clickhouse/'
+alias taildjango='tail -f /data/storage/docker/docker_ameagle/logs/django/django-runserver.log'
+alias tailcelery='tail -f /data/storage/docker/docker_ameagle/logs/django/celery.log'
+
+alias cddjango='cd /data/storage/docker/docker_ameagle/'
 
 #analog logstat in linux
 alias sockstat='lsof -Pi'

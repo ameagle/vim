@@ -142,6 +142,8 @@ let g:indentLine_enabled = 0
 	" ctrl t ---goto to back 
 	map <C-L> :NERDTreeToggle<CR>
 	map <F9> :NERDTreeToggle<CR>
+
+
 	
 	set pastetoggle=<F10> " to paste from OS buffer
 	nnoremap <F11> :set invnumber<CR>
