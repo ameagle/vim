@@ -35,6 +35,7 @@ alias taildjango='tail -f /data/storage/docker/docker_ameagle/logs/django/django
 alias tailcelery='tail -f /data/storage/docker/docker_ameagle/logs/django/celery.log'
 
 alias cddjango='cd /data/storage/docker/docker_ameagle/'
+alias dockdjango='docker exec -it mw-apistack-django-ameagle /bin/bash'
 
 #analog logstat in linux
 alias sockstat='lsof -Pi'
@@ -63,6 +64,12 @@ killgrep ()
 #fi
 
 #. ~/.docker-compose-completion.sh
+
+# include .bashrc if it exists
+if [ -f $HOME/.proxy_export ]; then
+	. $HOME/.proxy_export
+fi
+
 
 PAGER='less -X'; export PAGER
 export PATH=$PATH:/usr/local/bin
