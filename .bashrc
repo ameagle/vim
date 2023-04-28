@@ -18,13 +18,44 @@ alias less='less -X'
 alias tmux="tmux -2 "
 alias fs_cli='docker exec -it fs10-prod /bin/fs_cli'
 alias dockfs='docker exec -it fs10-prod /bin/bash'
-
+alias dockng='docker exec webserver nginx -s $1' #dockng reload
+alias dockbash='f() { docker exec -it $1 /bin/bash; unset -f f; }; f' #dockbash fs10-prod
 alias sudo-s='sudo HOME=/home/ameagle -s'
 alias stelnet='openssl s_client -connect $1'
 
 alias lsblkfs='lsblk --output NAME,FSTYPE,LABEL,UUID,MODE'
 alias mysql='docker exec -it  mariadb mysql -uroot -p'
 alias docklogger='docker exec -it logger /bin/bash'
+
+alias mysql='docker exec -it  phonelab20_mariadb_1 mysql -uroot -p'
+alias click='docker exec -it clickhouse-shard_1 clickhouse-client'
+alias djangolog='docker logs -f mw-apistack-django_ameagle'
+
+alias psql='docker exec -it mw-apistack-postgis_ameagle psql -U user -d moonwalker'
+#\d+ table_name -- show create table
+alias sourceclick='source /home/ameagle/python39/venv/bin/activate && cd /home/ameagle/Projects/clickhouse/'
+alias taildjango='tail -f /data/storage/docker/docker_ameagle/logs/django/django-runserver.log'
+alias tailcelery='tail -f /data/storage/docker/docker_ameagle/logs/django/celery.log'
+
+alias cddjango='cd /data/storage/docker/docker_ameagle/'
+alias dockdjango='docker exec -it mw-apistack-django-ameagle /bin/bash'
+
+#analog logstat in linux
+alias sockstat='lsof -Pi'
+
+#journalctl -f
+#https://ddanilov.me/how-to-configure-core-dump-in-docker-container
+#core, mount /tmp 
+#echo '/tmp/core.%e.%p.%s' | sudo tee /proc/sys/kernel/core_pattern
+
+#alias dnfnpchk="dnf -y --nogpgcheck install sngrep"
+alias dnfnpchk="dnf -y --nogpgcheck"
+
+
+#tar -czvf vks3.tar.gz /data/storage/docker/vks3/ — pack
+#tar -xzvf vks3.tar.gz -C /data/storage/docker/vks3_new/ — unpack
+
+
 
 PS1='\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\[\e[0;33m\][$(git branch 2>/dev/null | grep "^*" | colrm 1 2)]\[\e[1;32m\]\$\[\e[0m\] '
 
@@ -42,6 +73,12 @@ killgrep ()
 #fi
 
 #. ~/.docker-compose-completion.sh
+
+# include .bashrc if it exists
+if [ -f $HOME/.proxy_export ]; then
+	. $HOME/.proxy_export
+fi
+
 
 PAGER='less -X'; export PAGER
 export PATH=$PATH:/usr/local/bin
