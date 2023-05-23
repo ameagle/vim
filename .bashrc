@@ -31,7 +31,9 @@ alias mysqldb1='f() { echo "dback1" && mysql_root_pswd=$(cat /data/storage/docke
 alias mysqldb2='f() { echo "dback1" && mysql_root_pswd=$(cat /data/storage/docker/vks3/.secrets/MYSQL_ROOT_PASSWORD_FILE); docker exec -it dback2 mysql -uroot -p$mysql_root_pswd; unset -f f; }; f'
 
 
-alias mysqlmax='f() { echo "maxscale" && mysql_root_pswd=$(cat /data/storage/docker/vks3/.secrets/MYSQL_ROOT_PASSWORD_FILE); docker exec -it dback1 mysql -uroot -p$mysql_root_pswd -h mariadb; unset -f f; }; f'
+alias mysqlmax1='f() { echo "mariadb_maxscale1\n" && mysql_root_pswd=$(cat /data/storage/docker/vks3/.secrets/MYSQL_ROOT_PASSWORD_FILE); docker exec -it dback1 mysql -uroot -p$mysql_root_pswd -h mariadb; unset -f f; }; f'
+
+alias mysqlmax2='f() { echo "mariadb_maxscale2\n" && mysql_root_pswd=$(cat /data/storage/docker/vks3/.secrets/MYSQL_ROOT_PASSWORD_FILE); docker exec -it dback2 mysql -uroot -p$mysql_root_pswd -h mariadb; unset -f f; }; f'
 
 alias docklogger='docker exec -it logger /bin/bash'
 
