@@ -26,6 +26,7 @@ alias stelnet='openssl s_client -connect $1'
 alias lsblkfs='lsblk --output NAME,FSTYPE,LABEL,UUID,MODE'
 # vks3
 alias cdvks3='cd /data/storage/docker/vks3'
+alias cdcorpconf='cd /data/storage/docker/vks3/fs/corp/conf'
 alias mysqldb1='f() { echo "dback1" && mysql_root_pswd=$(cat /data/storage/docker/vks3/.secrets/MYSQL_ROOT_PASSWORD_FILE); docker exec -it dback1 mysql -uroot -p$mysql_root_pswd; unset -f f; }; f'
 alias mysqldb2='f() { echo "dback1" && mysql_root_pswd=$(cat /data/storage/docker/vks3/.secrets/MYSQL_ROOT_PASSWORD_FILE); docker exec -it dback2 mysql -uroot -p$mysql_root_pswd; unset -f f; }; f'
 
