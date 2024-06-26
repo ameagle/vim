@@ -30,7 +30,7 @@ alias cdvks3i='cd /data/storage/docker/vks3-installer'
 alias cdcorpconf='cd /data/storage/docker/vks3/fs/corp/conf'
 alias mysqldb1='f() { echo "dback1" && mysql_root_pswd=$(cat /data/storage/docker/vks3/.secrets/MYSQL_ROOT_PASSWORD_FILE); docker exec -it dback1 mysql -uroot -p$mysql_root_pswd; unset -f f; }; f'
 alias mysqldb2='f() { echo "dback1" && mysql_root_pswd=$(cat /data/storage/docker/vks3/.secrets/MYSQL_ROOT_PASSWORD_FILE); docker exec -it dback2 mysql -uroot -p$mysql_root_pswd; unset -f f; }; f'
-
+#alias docker-compose="docker compose --compatibility $@"
 
 alias mysqlmax1='f() { echo "mariadb_maxscale1\n" && mysql_root_pswd=$(cat /data/storage/docker/vks3/.secrets/MYSQL_ROOT_PASSWORD_FILE); docker exec -it dback1 mysql -uroot -p$mysql_root_pswd -h mariadb; unset -f f; }; f'
 
