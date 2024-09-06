@@ -20,7 +20,7 @@ alias fs_cli='docker exec -it fs10-prod /bin/fs_cli'
 alias dockfs='docker exec -it fs10-prod /bin/bash'
 alias dockng='docker exec webserver nginx -s $1' #dockng reload
 alias dockbash='f() { docker exec -it $1 /bin/bash; unset -f f; }; f' #dockbash fs10-prod
-alias sudo-s='sudo HOME=/home/ameagle -s'
+alias sudo-s='sudo HOME=$HOME -s'
 alias stelnet='openssl s_client -connect $1'
 
 alias lsblkfs='lsblk --output NAME,FSTYPE,LABEL,UUID,MODE'
