@@ -26,6 +26,7 @@ alias stelnet='openssl s_client -connect $1'
 alias lsblkfs='lsblk --output NAME,FSTYPE,LABEL,UUID,MODE'
 # vks3
 alias cdvks3='cd /data/storage/docker/vks3'
+alias cdarxiv='cd /data/storage/docker/arxiv'
 alias cdvks3i='cd /data/storage/docker/vks3-installer'
 alias cdcorpconf='cd /data/storage/docker/vks3/fs/corp/conf'
 alias mysqldb1='f() { echo "dback1" && mysql_root_pswd=$(cat /data/storage/docker/vks3/.secrets/MYSQL_ROOT_PASSWORD_FILE); docker exec -it dback1 mysql -uroot -p$mysql_root_pswd; unset -f f; }; f'
@@ -71,6 +72,7 @@ alias dnfnpchk="dnf -y --nogpgcheck"
 
 PS1='\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\[\e[0;33m\][$(git branch 2>/dev/null | grep "^*" | colrm 1 2)]\[\e[1;32m\]\$\[\e[0m\] '
 
+source /etc/profile.d/docker-compose.sh
 
 killgrep ()
 {
