@@ -72,7 +72,11 @@ alias dnfnpchk="dnf -y --nogpgcheck"
 
 PS1='\[\e[1;31m\]\u@\[\e[1;36m\]\H:\[\e[1;32m\]\w\[\e[0;33m\][$(git branch 2>/dev/null | grep "^*" | colrm 1 2)]\[\e[1;32m\]\$\[\e[0m\] '
 
-source /etc/profile.d/docker-compose.sh
+
+if [ -f /etc/profile.d/docker-compose.sh ]; then
+    source /etc/profile.d/docker-compose.sh
+fi
+
 
 killgrep ()
 {
