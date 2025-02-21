@@ -143,7 +143,8 @@ let g:indentLine_enabled = 0
 	map <C-L> :NERDTreeToggle<CR>
 	map <F9> :NERDTreeToggle<CR>
 
-
+	" 'dd or 'dw - just delete no cut
+	noremap ' "_
 	
 	set pastetoggle=<F10> " to paste from OS buffer
 	nnoremap <F11> :set invnumber<CR>
