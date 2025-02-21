@@ -98,6 +98,7 @@ if [ -f $HOME/.proxy_export ]; then
 fi
 
 
+
 PAGER='less -X'; export PAGER
 export PATH=$PATH:/usr/local/bin
 EDITOR=vim; export EDITOR

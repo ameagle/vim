@@ -117,7 +117,6 @@ let g:indentLine_enabled = 0
 	map <S-z><S-S> :w<CR>
 	
 	map <S-Z><S-X> :qa<CR>
-
 	map <F2> <C-w>w
 	map <C-J> :bprev<CR>
 	map <F3> :bprev<CR>
@@ -152,7 +151,7 @@ let g:indentLine_enabled = 0
 	nnoremap <F12> :NERDTreeFind<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-
+	" C-<o> -- run command in inser mode
 	"":Te -- open explorer in new windo>w
 	":vs --new buffer; ctrl-w --move ; ctrl-c close; 10 ctrl-w >--bigger
 	"new --new buff
