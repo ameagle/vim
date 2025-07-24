@@ -151,6 +151,12 @@ let g:indentLine_enabled = 0
 	nnoremap <F12> :NERDTreeFind<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+	" close current buffer
+	command Bd bp | sp | bn | bd
+	map <C-D> :Bd<CR>
+
+	" C-w -- go to nedtree
+	"
 	" C-<o> -- run command in inser mode
 	"":Te -- open explorer in new windo>w
 	":vs --new buffer; ctrl-w --move ; ctrl-c close; 10 ctrl-w >--bigger
