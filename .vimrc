@@ -154,8 +154,17 @@ let g:indentLine_enabled = 0
 	" close current buffer
 	command Bd bp | sp | bn | bd
 	map <C-D> :Bd<CR>
+	"nnoremap <leader>p oq<BS><Esc>p
+	"command Bd bp | sp | bn | bd
+	"map <C-D> :Bd<CR>
 
-	" C-w -- go to nedtree
+
+	" C-w and arrow  right or left-- go to nedtree
+	" ]p -- paste from new line https://github.com/tpope/vim-unimpaired
+	" o -new line
+	" ctlr-o - work like in paste mode
+	" before yy copy 
+	"in visual mode :  o ctrl-o p -- делает вставку с новой строки
 	"
 	" C-<o> -- run command in inser mode
 	"":Te -- open explorer in new windo>w
