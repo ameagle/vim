@@ -50,8 +50,13 @@ alias sourceclick='source /home/ameagle/python39/venv/bin/activate && cd /home/a
 alias taildjango='tail -f /data/storage/docker/docker_ameagle/logs/django/django-runserver.log'
 alias tailcelery='tail -f /data/storage/docker/docker_ameagle/logs/django/celery.log'
 
-alias cddjango='cd /data/storage/docker/docker_ameagle/'
-alias dockdjango='docker exec -it mw-apistack-django-ameagle /bin/bash'
+alias cddjango='cd /data/storage/docker/docker_ameagle/ || cd /data/storage/docker/apistack/'
+alias cdpoolkafka='cd /data/storage/docker/pool-kafka-ameagle/'
+alias chownkafkaavo='chown -R avonishhen /data/storage/docker/pool-kafka-ameagle/app/'
+alias dockdjango='docker exec -it mw-apistack-django /bin/bash'
+alias dockpool='docker exec -it pool-kafka-consumer-safeed-ameagle /bin/bash'
+alias dockpoolrun='docker exec -it pool-kafka-consumer-safeed-ameagle /bin/bash -c "make -j14 && make run"'
+alias dockpoolclean='docker exec -it pool-kafka-consumer-safeed-ameagle make clean'
 
 #analog logstat in linux
 alias sockstat='lsof -Pi'
